@@ -9,6 +9,9 @@
         "paths": {
             "server/*": [
                 "./*"
+            ],
+            "common/*": [
+                "../common/*"
             ]
         },
         "types": [
@@ -21,7 +24,7 @@
     },
     "include": [
         "./**/*.ts",
-        "../../@types/server/**/*.d.ts"
+        "../../@types/express.d.ts"
     ],
     "files": []
 }

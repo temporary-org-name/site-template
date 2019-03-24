@@ -41,7 +41,7 @@ client.build:
 
 .PHONY: copy.resources
 copy.resources:
-	mkdir -p build/resources && cp -r ./src/resources build/
+	mkdir -p build/resources && cp -r ./src/client/resources build/
 
 # Lintings
 .PHONY: lint

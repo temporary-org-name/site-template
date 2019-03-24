@@ -11,7 +11,7 @@ interface State {}
 
 const b = bevis('admin-page-container');
 
-export default class AdminPage extends React.Component<Props, State> {
+export default class AdminApp extends React.Component<Props, State> {
     state = {};
 
     componentDidMount() {}
@@ -23,7 +23,7 @@ export default class AdminPage extends React.Component<Props, State> {
 
         return (
             <div className={cl(b(), className)}>
-
+                Admin
             </div>
         );
     }

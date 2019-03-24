@@ -1,6 +1,7 @@
 import {Response, Request, NextFunction} from 'express';
 
 import env from 'server/lib/env';
+import {clientUrls} from 'common/urls';
 
 const isProd = env === 'production';
 
@@ -10,8 +11,8 @@ enum Format {
 }
 
 const urls = new Map([
-    ['/admin-panel', 'admin'],
-    ['/', 'client']
+    ...clientUrls.client.map((url) => ([url, 'client'] as [string, string])), // tslint:disable-line
+    ...clientUrls.admin.map((url) => ([url, 'admin'] as [string, string])) // tslint:disable-line
 ]);
 
 export default (req: Request, _: Response, next: NextFunction): void => {

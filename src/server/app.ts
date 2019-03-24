@@ -8,10 +8,13 @@ import mappingUrlMiddleware from 'server/middleware/mapping-urls';
 
 import adminController from 'server/controllers/admin';
 import clientController from 'server/controllers/client';
-
 import {getAbsolutePath} from 'server/utils/fs';
+import logger from 'server/lib/logger';
+
+import {clientUrls} from 'common/urls';
 
 const PORT = process.env.NODEJS_PORT || '8080';
+
 const app = express()
     .get('/ping', (_, res) => res.end())
     .engine('mustache', mustacheExpress())
@@ -32,15 +35,17 @@ app
     .use('/admin-api', adminController)
     .use('/client-api', clientController);
 
-app.get('/*', [mappingUrlMiddleware, buildPageMiddleware])
+app.get([
+    ...clientUrls.admin,
+    ...clientUrls.client
+], [mappingUrlMiddleware, buildPageMiddleware])
 
 app
     .use(notFoundMiddleware)
     .use(errorMiddleware);
 
 const server = app.listen(PORT, () => {
-    // TODO create debug
-    console.log(`Server listen ${PORT} port`);
+    logger('info', 'app', `Server listen ${PORT} port`)
 });
 
 module.exports = server;

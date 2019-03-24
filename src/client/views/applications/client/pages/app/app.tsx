@@ -11,7 +11,7 @@ interface State {}
 
 const b = bevis('client-page-container');
 
-export default class ClientPage extends React.Component<Props, State> {
+export default class ClientApp extends React.Component<Props, State> {
     state = {};
 
     componentDidMount() {}
@@ -23,7 +23,7 @@ export default class ClientPage extends React.Component<Props, State> {
 
         return (
             <div className={cl(b(), className)}>
-
+                Client
             </div>
         );
     }

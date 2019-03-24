@@ -4,7 +4,7 @@ import Boom from 'boom';
 
 import logger from 'server/lib/logger';
 import {getAbsolutePath} from 'server/utils/fs';
-import {HttpResponse} from 'server/utils/http/response';
+import {HttpResponse} from 'server/utils/http';
 
 interface IQuery {
     text: string;

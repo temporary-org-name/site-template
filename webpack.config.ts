@@ -8,7 +8,7 @@ import {getAbsolutePath} from './src/server/utils/fs';
 const isProd = env === 'production';
 console.log('\x1b[32m%s\x1b[0m', `${isProd ? 'Production' : 'Development'} building`);
 
-const getPathForIndex = (name: string) => getAbsolutePath(`./src/client/views/pages/${name}/`);
+const getPathForIndex = (name: string) => getAbsolutePath(`./src/client/views/applications/${name}/`);
 
 const babelPlugins: any[] = [];
 

@@ -1,13 +1,11 @@
 import React from 'react';
 import {render} from 'react-dom';
 
-import AdminPage from 'client/views/pages/admin/admin';
-
-import './admin.scss';
+import AdminApp from 'client/views/applications/admin/pages/app';
 
 window.onload = () => {
     render(
-        <AdminPage />,
+        <AdminApp />,
         document.getElementById('mount')
     );
 };

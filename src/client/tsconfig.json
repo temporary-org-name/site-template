@@ -15,7 +15,5 @@
             "lib/*": ["./lib/*"]
         }
     },
-    "include": [
-        "../../@types/client/**/*.d.ts"
-    ]
+    "include": []
 }
