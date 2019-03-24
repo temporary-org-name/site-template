@@ -1,0 +1,21 @@
+{
+    "extends": "../../tsconfig",
+    "compilerOptions": {
+        "lib": ["es2017", "dom"],
+        "module": "ESNext",
+        "jsx": "react",
+        "sourceMap": true,
+        "noImplicitAny": false,
+        "experimentalDecorators": true,
+        "allowJs": true,
+
+        "baseUrl": "./",
+        "paths": {
+            "client/*": ["./*"],
+            "lib/*": ["./lib/*"]
+        }
+    },
+    "include": [
+        "../../@types/client/**/*.d.ts"
+    ]
+}

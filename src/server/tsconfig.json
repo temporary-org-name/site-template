@@ -1,0 +1,27 @@
+{
+    "extends": "../../tsconfig",
+    "compilerOptions": {
+        "outDir": "../../build/server",
+        "sourceMap": true,
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "baseUrl": "./",
+        "paths": {
+            "server/*": [
+                "./*"
+            ]
+        },
+        "types": [
+            "node",
+            "express"
+        ],
+        "typeRoots": [
+            "./node_modules/@types"
+        ]
+    },
+    "include": [
+        "./**/*.ts",
+        "../../@types/server/**/*.d.ts"
+    ],
+    "files": []
+}
