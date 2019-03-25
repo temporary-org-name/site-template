@@ -11,8 +11,8 @@ enum Format {
 }
 
 const urls = new Map([
-    ...clientUrls.client.map((url) => ([url, 'client'] as [string, string])), // tslint:disable-line
-    ...clientUrls.admin.map((url) => ([url, 'admin'] as [string, string])) // tslint:disable-line
+    ...Object.values(clientUrls.client).map((url) => ([url, 'client'] as [string, string])), // tslint:disable-line
+    ...Object.values(clientUrls.admin).map((url) => ([url, 'admin'] as [string, string])) // tslint:disable-line
 ]);
 
 export default (req: Request, _: Response, next: NextFunction): void => {

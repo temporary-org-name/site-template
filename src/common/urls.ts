@@ -1,4 +1,9 @@
 export const clientUrls = {
-    admin: ['/admin-panel'],
-    client: ['/', '/smth']
+    admin: {
+        app: '/admin-panel'
+    },
+    client: {
+        app: '/',
+        smth: '/smth'
+    }
 };

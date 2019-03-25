@@ -36,8 +36,8 @@ app
     .use('/client-api', clientController);
 
 app.get([
-    ...clientUrls.admin,
-    ...clientUrls.client
+    ...Object.values<string>(clientUrls.admin),
+    ...Object.values<string>(clientUrls.client)
 ], [mappingUrlMiddleware, buildPageMiddleware])
 
 app
