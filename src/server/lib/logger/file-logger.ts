@@ -9,7 +9,8 @@ const createLogger = (): winston.Logger => {
     });
 
     const logPath = getAbsolutePath('./logs');
-    const name = 'dbservice';
+    const name = 'app';
+
     return winston.createLogger({
         format: combine(
             splat(),
