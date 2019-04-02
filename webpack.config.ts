@@ -1,7 +1,7 @@
-// console.log('\x1b[32m%s\x1b[0m', `${isProd ? 'Production' : 'Development'} building`);
+import env from './src/server/lib/env';
+console.log('\x1b[32m%s\x1b[0m', `Building in mode: ${env}`);
 
-const mode = process.env.MODE || 'development';
-const params = {mode};
+const params = {mode: env};
 
 module.exports = ['client', 'server']
     .reduce((allConfigs, name) => {
